@@ -1,0 +1,22 @@
+{
+    "name": "Jenkins orchestrator warning",
+    "version": "0.01",
+    "description": "Changes the colour of the Jenkins header when visiting Externaltest (orange) or Production (red) orchestrator Jenkins.",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://orchestrator.tools.production.tax.service.gov.uk/*"
+            ],
+            "js": ["js/productionContentScript.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://orchestrator.tools.externaltest.tax.service.gov.uk/*"
+            ],
+            "js": ["js/externalTestContentScript.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "manifest_version": 2
+}
